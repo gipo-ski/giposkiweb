@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box; 
+    /* border: 1px solid rebeccapurple; */
+}
+
+body {
+    max-width: 100vw;
+    margin: auto;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;    
+}
+
+header, main, footer {
+    background-color: grey;
+    max-width: 100%;
+    margin: 0.2em;
+    padding: 1em;
+}
+
+header * {
+    display: flex;
+    justify-content: space-between;
+}
+
+header div img {
+    max-width: 15%;
+    padding: 0.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+    padding: 0em 1em;
+}
+h2 {
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+main .products_flex_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card {
+    margin: 1em;
+    text-align: center;
+}
+
+button {
+    padding: 0.5em 2.5em;
+    outline-color: honeydew;
+    outline-style: dashed;
+    outline-width: 1px;
+    outline-offset: 5px;
+    margin-bottom: 0.75em;
+}
+
+footer{
+    text-align: center;
+}

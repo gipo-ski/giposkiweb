@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>test.flexbox</title>
+        <style>
+            .wrapper, .flex-container-figuresection {
+                display: flex;
+                flex-flow: row wrap;
+                font-weight: bold;
+                text-align: center;
+            }
+        
+            .wrapper>* {
+                padding: 10px;
+                flex: 1 100%;
+                border: 0.1em solid black;
+            }
+        
+            .header {
+                background: tomato;
+            }
+        
+            .footer {
+                background: lightgreen;
+            }
+        
+            .main {
+                text-align: left;
+                background: deepskyblue;
+            }
+        
+            .aside-1 {
+                background: gold;
+            }
+        
+            .aside-2 {
+                background: hotpink;
+            }
+        
+            @media all and (min-width: 600px) {
+                .aside {
+                    flex: 1 0 0;
+                }
+            }
+        
+            @media all and (min-width: 800px) {
+                .main {
+                    flex: 3 0px;
+                }
+        
+                .aside-1 {
+                    order: 1;
+                }
+        
+                .main {
+                    order: 2;
+                }
+        
+                .aside-2 {
+                    order: 3;
+                }
+        
+                .footer {
+                    order: 4;
+                }
+            }
+        
+            body {
+                padding: 2em;
+            }
+        </style>
+    </head>
+</html>
+<body>
+    <!--
+        <div class="wrapper">
+        <header class="header">Header</header>
+        <article class="main">
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+              Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+              Mauris placerat eleifend leo.
+            </p>  
+        </article>
+        <aside class="aside aside-1">Aside 1</aside>
+        <aside class="aside aside-2">Aside 2</aside>
+        <footer class="footer">Footer</footer>
+      </div>
+    -->
+
+      <main class="wrapper">
+        <section class="header">
+           <h1>The Women's Shop</h1>
+           <p>Hey, you’re new here!</p>
+           <p id="vouchercode">Get 15% off everything with code: GIPOSKINEW15</p>
+           <div>Summer clearance<br>
+              Get 15% off everything with code: GIPOSKINEW15
+           </div>
+        </section>
+        <section class="main">
+           <section class="flex-container-figuresection">
+              <figure>
+                 <a href=""> <img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Dresses</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Tops</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Jumpsuits</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Shorts</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Shoes</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Boots</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Coats & Jackets</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Shirts & Blouses</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Underwear</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Nightwear</a></figcaption>
+              </figure>
+              <figure>
+                 <a href=""><img src="../images/woman.png" alt=""></a>
+                 <figcaption><a href="">Accessories</a></figcaption>
+              </figure>
+           </section>  
+        </section>
+        <aside class="aside aside-1">
+            <a href="womenshop.html">WOMEN</a>
+            <div class="asidemenubar">
+               <div class="sidemenusub">
+                  <a class="sidesubmenuheading" href="">NEW IN</a>
+                  <a href="">View all
+                  <a href="">Clothing</a>
+                  <a href="">Shoes</a>
+                  <a href="">Accessories</a>
+                  <a href="">Trending now</a>
+               </div>
+               <div class="sidemenusub">
+                  <a class="sidesubmenuheading" href="">CLOTHING</a>
+                  <a href="">Blouses & Shirts</a>
+                  <a href="">Coats & Jackets</a>
+                  <a href="">Dresses</a>
+                  <a href="">Hoodies & Sweatshirts</a>
+                  <a href="">Jeans</a>
+                  <a href="">Jumpers & Cardigans</a>
+                  <a href="">Jumpsuits & Playsuits</a>
+                  <a href="">Loungewear</a>
+                  <a href="">Shorts</a>
+                  <a href="">Skirts</a>
+                  <a href="">Sportswear</a>
+                  <a href="">Suits & Workwear</a>
+                  <a href="">Swim & Beachwear</a>
+                  <a href="">Tops</a>
+                  <a href="">Trousers & Leggings</a>
+               </div>
+               <div class="sidemenusub">
+                  <a class="sidesubmenuheading" href="">LINGERIE & NIGHTWEAR</a>
+                  <a href=""> Lingerie</a>
+                  <a href=""> All Bras</a>
+                  <a href=""> All Knickers</a>
+                  <a href=""> Dressing Gowns</a>
+                  <a href=""> Pyjamas & Nightwear</a>
+                  <a href=""> Slippers</a>
+                  <a href=""> Socks & Tights</a>
+               </div>
+               <div class="sidemenusub">
+                  <a class="sidesubmenuheading" href="">SHOES</a>
+                  <a href="">All Shoes & Boots</a>
+                  <a href="">Boots</a>
+                  <a href=""> Flats</a>
+                  <a href="">Heels</a>
+                  <a href="">Sandals</a>
+                  <a href="">Trainers</a>
+                  <a href="">Wedges & Flatforms</a>
+               </div>
+               <div class="sidemenusub">
+                  <a class="sidesubmenuheading" href="">ACCESSORIES</a>
+                  <a href=""> All Accessories</a>
+                  <a href=""> Bags, Purses & Luggage</a>
+                  <a href=""> Jewellery & Watches</a>
+                  <a href=""> Summer Hats, Caps & Scarves</a>
+                  <a href=""> Sunglasses</a>
+               </div>
+               <div class="sidemenusub">
+                  <a class="sidesubmenuheading" href="">TRENDING</a>
+                  <a href="">The Summer Shop</a>
+                  <a href="">The Outdoor Edit</a>
+               </div>
+            </div>
+         </aside>
+        
+     
+     </main>
+</body>
+</html>

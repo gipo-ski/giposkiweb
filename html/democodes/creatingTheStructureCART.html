@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>add to cart</title>
+
+    <style>
+        #itemobject {
+            /*display: flex;
+            justify-content: center;*/
+            border: 0.1em solid grey;
+            padding: 1em;
+            background-color: azure;
+        }
+        #itemobject * {
+            /*flex: 14%;*/
+            border: 0.1em solid grey;
+            padding: 1em;
+            background-color: red
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <article class="productchoice">
+        <figure>
+           <a href="womenblackwashedjeggings.html"> <img src="../images/women-black-washed-jeggings.png" alt="" id="wbwj" style="width:100px;"></a>
+           <!--<figcaption>Women Black Washed Jeggings</figcaption>-->
+        </figure>
+        <div class="productdetail">
+           <h4 id="itemname">Women Black Washed Jeggings</h4>
+           <code>Code: <span id="pcode">XYZ1234</span></code>
+           <P id="itemdescription"><span id="description">Description.</span><br><br>
+              Some story about the product Some story about the product Some story about the product Some story about the
+              product</P>
+           <hr>
+           <span id="originalprice">Original Price: £30</span>
+           <p>Now: £<span id="nowprice">15</span></p>
+           <hr>
+           <form class="itemsize" action="">
+              <label for="sizeselect">Select Size</label><br>
+              <select name="selectsize" id="sizeselect" onchange="run()">
+                 <option value="8">UK 8</option>
+                 <option value="10">UK 10</option>
+                 <option value="12">UK 12</option>
+                 <option value="14">UK 14</option>
+                 <option value="16">UK 16</option>
+              </select><br><br>
+              <button onclick="myFunction()">ADD TO CART &#128722;</button>
+           </form>
+           <br><br><br><br><br><br><hr>
+        </div>
+     </article>
+     <table id="itemobject">
+         <thead><tr><td>Image</td><td>Name</td><td>Code</td><td>Size</td><td>Quantity</td><td>Availability</td><td>Price</td></tr></thead>
+         <tbody><tr><td id="demo1"></td><td id="demo2"></td><td id="demo3"></td><td id="demo4"></td><td id="demo5"></td><td id="demo6"></td><td id="demo7"></td></tr></tbody>
+     </table>
+     <br><br><br><br><br><br><hr>
+
+     <script>
+        function run() {
+            document.getElementById("demo4").value = document.getElementById("sizeselect").value;
+        }
+    </script>
+    
+
+     <script>
+         function myFunction() {
+             var image = document.getElementById("wbwj").src;
+             document.getElementById("demo1").innerHTML = image;
+             var name = document.getElementById("itemname").innerHTML;
+             document.getElementById("demo2").innerHTML = name;
+             var code = document.getElementById("pcode").innerHTML;
+             document.getElementById("demo3").innerHTML = code;
+             var size = document.getElementById("sizeselect").selectedOptions[0].text;
+             document.getElementById("demo4").innerHTML = size;
+             var quantity = 1;
+             document.getElementById("demo5").innerHTML = quantity;
+             var availability = "In stock";
+             document.getElementById("demo6").innerHTML = availability;
+             var price = document.getElementById("nowprice").innerHTML;
+             document.getElementById("demo7").innerHTML = price;
+             }                   
+       </script>
+
+   
+<script>
+    //create array that will hold all ordered products
+    var shoppingCart = [];
+
+    //this function manipulates DOM and displays content of our shopping cart
+    function displayShoppingCart() {
+        var orderedProductsTblBody = document.getElementById("orderedProductsTblBody");
+        //ensure we delete all previously added rows from ordered products table
+        while (orderedProductsTblBody.rows.length > 0) {
+            orderedProductsTblBody.deleteRow(0);
+        }
+
+        //variable to hold total price of shopping cart
+        var cart_total_price = 0;
+        //iterate over array of objects
+        for (var product in shoppingCart) {
+            //add new row      
+            var row = orderedProductsTblBody.insertRow();
+            //create seven cells for product properties (image, name, code, size, quantity, availability, price)
+            var cellImage = row.insertCell(0);
+            var cellName = row.insertCell(1);
+            var cellCode = row.insertCell(2);
+            var cellSize = row.insertCell(3);
+            var cellQuantity = row.insertCell(4);
+            var cellAvailability = row.insertCell(5);
+            var cellPrice = row.insertCell(6);
+            cellPrice.align = "right";
+            //fill cells with values from current product object of our array
+            cellImage.innerHTML = shoppingCart[product].Image
+            cellName.innerHTML = shoppingCart[product].Name;
+            cellCode.innerHTML = shoppingCart[product].Code;
+            cellSize.innerHTML = shoppingCart[product].Size;
+            cellQuantity.innerHTML = shoppingCart[product].Quantity;
+            cellAvailability.innerHTML = shoppingCart[product].Availability;
+            cellPrice.innerHTML = shoppingCart[product].Price;
+            cart_total_price += shoppingCart[product].Price;
+        }
+        //fill total cost of our shopping cart 
+        document.getElementById("cart_total").innerHTML = cart_total_price;
+    }
+
+
+    function AddtoCart(name, description, price) {
+        //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
+        var singleProduct = {};
+        //Fill the product object with data
+        singleProduct.Name = name;
+        singleProduct.Description = description;
+        singleProduct.Price = price;
+        //Add newly created product to our shopping cart 
+        shoppingCart.push(singleProduct);
+        //call display function to show on screen
+        displayShoppingCart();
+
+    }
+    //Add some products to our shopping cart via code or you can create a button with onclick event
+    //AddtoCart("Table","Big red table",50);
+    //AddtoCart("Door","Big yellow door",150);
+    //AddtoCart("Car","Ferrari S23",150000);
+</script> 
+
+</body>
+
+</html>

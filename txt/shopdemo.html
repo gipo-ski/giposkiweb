@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>shop.demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="shopdemo.css">
+
+	<script src="cart-localstorage.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../images/giposkilogoBIG.png" alt="company logo">
+            <h1>Company Name</h1>
+        </div>
+    </header>
+
+    <main>
+        <h2>Products</h2>
+        <div class="products_flex_container">
+            <div class="product-card">
+                <div class="product-header">
+                    <h3>item1</h3>
+                    <!-- <p>This is item1</p> -->
+                </div>
+                <div class="product_card_body">
+                    <img src="item1.png" alt="item1 photo">
+                    <h1>£10</h1>
+                    <button type="button" class="btn btn-block btn-outline-primary"
+                        onClick="cartLS.add({id: 1, name: 'item1', price: 10})">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-header">
+                    <h3>item2</h3>
+                    <!-- <p>This is item2</p> -->
+                </div>
+                <div class="product_card_body">
+                    <img src="item2.png" alt="item2 photo">
+                    <h1>£20</h1>
+                    <button type="button" class="btn btn-block btn-outline-primary"
+                        onClick="cartLS.add({id: 2, name: 'item2', price: 20})">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-header">
+                    <h3>item3</h3>
+                    <!-- <p>This is item3</p> -->
+                </div>
+                <div class="product_card_body">
+                    <img src="item3.png" alt="item3 photo">
+                    <h1>£30</h1>
+                    <button type="button" class="btn btn-block btn-outline-primary"
+                        onClick="cartLS.add({id: 3, name: 'item3', price: 30})">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-header">
+                    <h3>item4</h3>
+                    <!-- <p>This is item4</p> -->
+                </div>
+                <div class="product_card_body">
+                    <img src="item4.png" alt="item4 photo">
+                    <h1>£40</h1>
+                    <button type="button" class="btn btn-block btn-outline-primary"
+                        onClick="cartLS.add({id: 4, name: 'item4', price: 40})">Add to
+                        Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Copyright &copy 2021
+    </footer>
+
+    <script>
+		function renderCart(items) {
+			const $cart = document.querySelector(".cart")
+			const $total = document.querySelector(".total")
+
+			$cart.innerHTML = items.map((item) => `
+					<tr>
+						<td>#${item.id}</td>
+						<td>${item.name}</td>
+						<td>${item.quantity}</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},1)">+</button>
+						</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},-1)">-</button>
+						</td>
+						<td class="text-right">$${item.price}</td>
+						<td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
+					</tr>`).join("")
+
+			$total.innerHTML = "$" + cartLS.total()
+		}
+		renderCart(cartLS.list())
+		cartLS.onChange(renderCart)
+	</script>
+</body>
+</html>

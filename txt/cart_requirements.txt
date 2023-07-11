@@ -1,0 +1,22 @@
+cart
+
+1 create button to add item to cart
+2 on-click, item is added to cart
+3 cart icon is updated with cart quantity content
+
+
+things that should happen.
+1 item stock to reduce by quantity added to cart.
+  cart should be editable (reduce item quantity/delete/save for later)
+  stock should update in relation to edits made in cart.
+2 cart page to display added item quantity and specifics including item image
+3 better if cart is a table of item(s) added
+4 cart page dispalys accurate order total and vat in appropriate currency
+5 cart page accepts voucher code if available
+6 cart page allows customer check-out via check-out button
+7 check-out places order with seller and takes payment from customer instantly and securely
+8 email confirmation is sent to buyer with order number
+9 instant notification and email order placement with order number is sent to seller for processing
+10 after order is placed, customer cart should be empty.
+11 customer order history is updated to customer account
+

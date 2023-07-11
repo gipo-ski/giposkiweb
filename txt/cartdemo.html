@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>cart.demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="cartdemo.css">
+
+	<script src="cart-localstorage.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../images/giposkilogoBIG.png" alt="company logo">
+            <h1>Company Name</h1>
+        </div>
+    </header>
+
+    <main>
+        <h2>Cart</h2>
+        <div class="cart_flex_container">
+            <div class="card-body">
+                <table>
+                    <thead><th>id</th><th>item</th><th>quantity</th><th>increase</th><th>reduce</th><th>cost</th></thead>
+                    <tbody class="cart">
+                    </tbody>
+                    <tfoot>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right">Total: </td>
+                        <td id="cart-total"><strong class="total"></strong></td>
+                        <td></td>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="precheck-out">
+            <p>Clicking this button will take you to the check out page for a final review of your purchase before placing the order.</p>
+            <br>
+            <button onclick="checkout()"> check out    
+            </button>
+        </div>
+       
+    </main>
+
+    <footer>
+        Copyright &copy 2021
+    </footer>
+
+    <script>
+        function checkout() {
+            open(url = "checkout.html")
+        }
+
+
+		function renderCart(items) {
+			const $cart = document.querySelector(".cart")
+			const $total = document.querySelector(".total")
+
+			$cart.innerHTML = items.map((item) => `
+					<tr>
+						<td>#${item.id}</td>
+						<td>${item.name}</td>
+						<td>${item.quantity}</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},1)">+</button>
+						</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},-1)">-</button>
+						</td>
+						<td class="text-right">$${item.price}</td>
+						<td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
+					</tr>`).join("")
+
+			$total.innerHTML = "$" + cartLS.total()
+		}
+		renderCart(cartLS.list())
+		cartLS.onChange(renderCart)
+	</script>
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>head navigation</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        header#flex-container-mainheader {
+            display: flex;
+            flex-wrap: wrap;
+            /*background-color: black;*/
+            
+        }
+        div.flex-container-headerdiv {
+            display: flex;
+            flex: 100%;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            border: 0.1em solid red;
+        }
+        div.flex-container-headerdiv * {
+            border: 0.1em solid red;
+        }
+
+
+
+        nav.flex-container-menu {
+            display: flex;
+            flex: 100%;
+            justify-content: center;
+        }
+
+
+        div.flex-container-headerdiv div#glogo {
+            flex: 15%;
+            /*padding: 1em 0em 0em 1em;*/
+            margin: 1em 2em;
+        }
+        /*div.flex-container-headerdiv div#glogo a {
+            width: 50%;
+            min-width: 6em;
+        }*/
+        div.flex-container-headerdiv div#glogo a img#giposkilogo {
+            width: 100%;
+            min-width: 8em;
+        }
+        div.flex-container-headerdiv form#gsearch {
+            flex: 60%;
+        }
+        div.flex-container-headerdiv form#gsearch div.shopsearch {
+            display: flex;
+            width: 100%;
+            margin: 0em;
+        }
+        div.flex-container-headerdiv form#gsearch div.shopsearch label {
+            display: none;
+        }
+        div.flex-container-headerdiv form#gsearch div.shopsearch input#searchbox {
+            width: inherit;
+            padding: 0.25em 0.5em;
+        }
+        div.flex-container-headerdiv form#gsearch div.shopsearch input#searchbutton {
+            flex: 20%;
+            padding: 0.5em 2.5em;
+        }
+
+        div.flex-container-headerdiv div.accountcart {
+            flex: 20%;
+            margin: 0em 2em;
+            /*display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin: 0em 1em 0em 1em;*/
+            border: 0.1em solid yellow;
+            
+        }
+        div.flex-container-headerdiv div.accountcart {
+            border: 0.1em solid yellow;
+        }
+        div.flex-container-headerdiv div.accountcart ul {
+            display: flex;
+            list-style: none;
+            width: 100%;
+            margin: 0em;
+            padding: 0em;
+        }
+        div.flex-container-headerdiv div.accountcart ul li#acct {            
+            display: inline-block;
+            flex: 50%;
+            padding: 0em 0.25em;
+            text-align: center;
+            margin: 0em;          
+        }
+        div.flex-container-headerdiv div.accountcart ul li#bask {
+            display: inline-block;
+            flex: 50%;
+            padding: 0em 0.25em;
+            text-align: center;
+            margin: 0em;    
+        }
+        #acct a {
+            color: snow;            
+            padding: 0em 0.5em;
+            text-decoration: none;
+        }
+        #bask a {
+            color: snow;            
+            padding: 0em 0.5em;
+            text-decoration: none;
+        }
+
+        div.flex-container-headerdiv div.accountcart ul li a span {
+            
+        }
+        div.flex-container-headerdiv div.accountcart ul li a span.iconused {
+            
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header id="flex-container-mainheader" >
+        <div class="flex-container-headerdiv">
+            <div id="glogo">
+                <a href="homepage.html" title="Go To GIPOSKI Homepage for More Shop Item">
+                    <img id="giposkilogo" src="../images/giposkilogoBIG.png" alt="company name: GIPOSKI" title="GIPOSKI Logo"> 
+                </a>
+            </div>
+            <form id="gsearch" action="">
+                <div class="shopsearch">
+                    <label for="search">Search item:</label>
+                    <input id="searchbox" type="search" id="search" name="search" placeholder="Search item:">
+                    <input id="searchbutton" type="submit">
+                </div>
+            </form>
+            <div class="accountcart">
+                <ul>
+                    <li id="acct"><a href="myaccountpage.html"><span class="iconused">&#128722;</span> My Account</a></li>
+                    <li id="bask"><a href="mybasketpage.html"><span class="iconused">&#128722;</span>Basket</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="flex-container-menu">
+           <ul>
+              <div class="navmenusubmain">
+              <li><a href="homepage.html">Home</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a href="">Women</a>
+                       <a href="">Men</a>
+                       <a href="">Girls</a>
+                       <a href="">Boys</a>
+                       <a href="">Shoes</a>
+                       <a href="">Accessories</a>
+                       <a href="">clearance</a>
+                       <a href="">My Account</a>
+                       <a href="">Basket</a>
+                    </div>
+                 </div>
+              </li>
+              <li><a href="womenshop.html">Women</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">NEW IN</a>
+                       <a href="">View all
+                       <a href="">Clothing</a>
+                       <a href="">Shoes</a>
+                       <a href="">Accessories</a>
+                       <a href="">Trending now</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">CLOTHING</a>
+                       <a href="">Blouses & Shirts</a>
+                       <a href="">Coats & Jackets</a>
+                       <a href="">Dresses</a>
+                       <a href="">Hoodies & Sweatshirts</a>
+                       <a href="">Jeans</a>
+                       <a href="">Jumpers & Cardigans</a>
+                       <a href="">Jumpsuits & Playsuits</a>
+                       <a href="">Loungewear</a>
+                       <a href="">Shorts</a>
+                       <a href="">Skirts</a>
+                       <a href="">Sportswear</a>
+                       <a href="">Suits & Workwear</a>
+                       <a href="">Swim & Beachwear</a>
+                       <a href="">Tops</a>
+                       <a href="">Trousers & Leggings</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">LINGERIE & NIGHTWEAR</a>                       
+                       <a href=""> Lingerie</a>
+                       <a href=""> All Bras</a>
+                       <a href=""> All Knickers</a>
+                       <a href=""> Dressing Gowns</a>
+                       <a href=""> Pyjamas & Nightwear</a>
+                       <a href=""> Slippers</a>
+                       <a href=""> Socks & Tights</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">SHOES</a>
+                       <a href="">All Shoes & Boots</a>
+                       <a href="">Boots</a>
+                       <a href=""> Flats</a>
+                       <a href="">Heels</a>
+                       <a href="">Sandals</a>
+                       <a href="">Trainers</a>
+                       <a href="">Wedges & Flatforms</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">ACCESSORIES</a>
+                       <a href=""> All Accessories</a>
+                       <a href=""> Bags, Purses & Luggage</a>
+                       <a href=""> Jewellery & Watches</a>
+                       <a href=""> Summer Hats, Caps & Scarves</a>
+                       <a href=""> Sunglasses</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">TRENDING</a>
+                       <a href="">The Summer Shop</a>
+                       <a href="">The Outdoor Edit</a>
+                    </div>    
+                 </div>
+              </li>
+              <li><a href="menshop.html">Men</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">CLOTHING</a>
+                       <a href="">Jackets & Coats</a>
+                       <a href="">Jeans</a>
+                       <a href="">Joggers</a>
+                       <a href="">Jumpers & Cardigans</a>
+                       <a href="">Loungewear</a>
+                       <a href="">Pyjamas & Nightwear</a>
+                       <a href="">Shirts</a>
+                       <a href="">Shorts & Swimwear</a>
+                       <a href="">Socks</a>
+                       <a href="">Sportswear</a>
+                       <a href="">Sweatshirts & Hoodies</a>
+                       <a href="">Trousers & Chinos</a>
+                       <a href="">T-Shirts & Polos</a>
+                       <a href="">Underwear</a>
+                       <a href="">Vests</a>
+                       <a href="">Big & Tall</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">SUITS & FORMALWEAR</a>
+                       <a href="">Blazer & Formal Jackets</a>
+                       <a href="">Formal Shirts</a>
+                       <a href="">Formal Trousers</a>
+                       <a href="">Suits</a>
+                       <a href="">Ties & Pocket Squares</a>
+                       <a href="">Waistcoats</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">FOOTWEAR</a>
+                       <a href="">All Footwear</a>
+                       <a href=""> Boots</a>
+                       <a href="">Loafers</a>
+                       <a href="">Sandals</a>
+                       <a href="">Sliders & Flipflops</a>
+                       <a href="">Shoes</a>
+                       <a href="">Slippers</a>
+                       <a href="">Smart Shoes</a>
+                       <a href="">Sports Trainers</a>
+                       <a href="">Trainers</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">ACCESSORIES</a>
+                       <a href="">All Accessories</a>
+                       <a href="">Bags</a>
+                       <a href="">Belts & Braces</a>
+                       <a href="">Cufflinks & Tie Clips</a>
+                       <a href="">Face Covering's</a>
+                       <a href="">Gifts & Gadgets</a>
+                       <a href="">Hats, Scarves & Gloves</a>
+                       <a href="">Travel Accessories</a>
+                       <a href="">Sunglasses</a>
+                       <a href="">Wallets</a>
+                       <a href="">Watches</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">TRENDING</a>
+                       <a href="">Marvin Humes Edit</a>
+                       <a href="">Summer Casuals</a>
+                       <a href="">Back To College</a>
+                       <a href="">Multipacks</a>
+                       <a href="">2 for £30 Chino Shorts</a>
+                    </div>
+                 </div>
+              </li>
+              <li><a href="girlsshop.html">Girls</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">CLOTHING</a>
+                       <a href="">Bodysuits</a>
+                       <a href="">Coats & Jackets</a>
+                       <a href="">Dresses</a>
+                       <a href="">Jeans</a>
+                       <a href="">Jumpsuits & Playsuits</a>
+                       <a href="">Knitwear</a>
+                       <a href="">Nightwear & Pyjamas</a>
+                       <a href="">Schoolwear</a>
+                       <a href="">Sets & Outfits</a>
+                       <a href="">Shorts & Skirts</a>
+                       <a href="">Sleepsuits & Babygrows</a>
+                       <a href="">Sleep Bags</a>
+                       <a href="">Socks & Tights</a>
+                       <a href="">Sportswear</a>
+                       <a href="">Sweatshirts & Hoodies</a>
+                       <a href="">Swim & Beach</a>
+                       <a href="">Tops, T-Shirts & Shirts</a>
+                       <a href="">Trousers & Leggings</a>
+                       <a href="">Underwear</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">SHOES & ACCESSORIES</a> 
+                       <a href="">Bags & Accessories</a>
+                       <a href="">Hats, Gloves & Scarves</a>
+                       <a href="">Shoes & Boots</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">TRENDING</a> 
+                       <a href="">Summer Shop</a>
+                       <a href="">Kids Character Shop</a>
+                       <a href="">Toys & Games</a>
+                    </div>
+                 </div>
+              </li>
+              <li><a href="boysshop.html">Boys</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">CLOTHING</a>
+                       <a href="">Bodysuits</a>
+                       <a href="">Coats & Jackets</a>
+                       <a href="">Jeans</a>
+                       <a href="">Joggers</a>
+                       <a href="">Knitwear</a>
+                       <a href="">Nightwear & Pyjamas</a>
+                       <a href="">Schoolwear</a>
+                       <a href="">Sets & Outfits</a>
+                       <a href="">Shirts</a>
+                       <a href="">Shorts</a>
+                       <a href="">Sleepsuits & Babygrows</a>
+                       <a href="">Sleep Bags</a>
+                       <a href="">Socks</a>
+                       <a href="">Sportswear</a>
+                       <a href="">Suits & Waistcoats</a>
+                       <a href="">Sweatshirts & Hoodies</a>
+                       <a href="">Swim & Beach</a>
+                       <a href="">Tops, T-Shirts & Polos</a>
+                       <a href="">Tracksuits</a>
+                       <a href="">Trousers & Chinos</a>
+                       <a href="">Underwear</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">SHOES & ACCESSORIES</a>
+                       <a href="">Bags & Accessories</a>
+                       <a href="">Hats, Gloves & Scarves</a>
+                       <a href="">Shoes & Boots</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">TRENDING</a> 
+                       <a href="">Summer Shop</a>
+                       <a href="">Kids Character Shop</a>
+                       <a href="">Toys & Games</a>
+                    </div>
+                 </div>
+              </li>
+              <li><a href="shoesshop.html">Shoes</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">WOMENS</a> 
+                       <a href=""> New In</a>
+                       <a href="">All Shoes</a>
+                       <a href="">All Boots</a>
+                       <a href="">Flats</a>
+                       <a href="">Flip-Flops & Sliders</a>
+                       <a href="">Forever Comfort</a>
+                       <a href="">Heels</a>
+                       <a href="">Leather</a>
+                       <a href="">Sandals</a>
+                       <a href="">Slippers</a>
+                       <a href="">Black Shoes</a>
+                       <a href="">Trainers</a>
+                       <a href="">Wedges & Flatforms</a>
+                       <a href=""> Wide Fit & Extra Wide Fit</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">MENS</a>
+                       <a href=""> All Footwear</a>
+                       <a href=""> All Shoes</a>
+                       <a href=""> Boat Shoes</a>
+                       <a href=""> Boots</a>
+                       <a href=""> Brogues</a>
+                       <a href=""> Espadrilles</a>
+                       <a href=""> Loafers</a>
+                       <a href=""> Sandals</a>
+                       <a href=""> Sliders & Flipflops</a>
+                       <a href=""> Slippers</a>
+                       <a href=""> Trainers & Pumps</a>
+                       <a href=""> Wellies</a>
+                       <a href=""> Safety Footwear</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">GIRLS</a>
+                       <a href=""> Boots & Wellies</a>
+                       <a href=""> Sandals</a>
+                       <a href=""> School Shoes</a>
+                       <a href=""> Slippers</a>
+                       <a href=""> Trainers & Pumps</a>
+                       <a href=""> All Girl Shoes</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">BOYS</a>
+                       <a href=""> Boots & Wellies</a>
+                       <a href=""> Sandals</a>
+                       <a href=""> School Shoes</a>
+                       <a href=""> Slippers</a>
+                       <a href=""> Trainers & Pumps</a>
+                       <a href=""> All Boys Shoes</a>
+                    </div>               
+                 </div>
+              </li>
+              <li><a href="accessoriesshop.html">Accessories</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">WOMEN</a>
+                       <a href=""> All Accessories</a>
+                       <a href=""> Bags, Purses & Luggage</a>
+                       <a href=""> Jewellery & Watches</a>
+                       <a href=""> Summer Hats, Caps & Scarves</a>
+                       <a href=""> Sunglasses</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">MEN</a>
+                       <a href="">All Accessories</a>
+                       <a href="">Bags</a>
+                       <a href="">Belts & Braces</a>
+                       <a href="">Cufflinks & Tie Clips</a>
+                       <a href="">Face Covering's</a>
+                       <a href="">Gifts & Gadgets</a>
+                       <a href="">Hats, Scarves & Gloves</a>
+                       <a href="">Travel Accessories</a>
+                       <a href="">Sunglasses</a>
+                       <a href="">Wallets</a>
+                       <a href="">Watches</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">GIRLS</a>
+                       <a href="">Bags & Accessories</a>
+                       <a href="">Hats, Gloves & Scarves</a>
+                       <a href="">Shoes & Boots</a>
+                    </div>
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">BOYS</a>
+                       <a href="">Bags & Accessories</a>
+                       <a href="">Hats, Gloves & Scarves</a>
+                       <a href="">Shoes & Boots</a>
+                    </div>
+                 </div>
+              </li>
+              <li><a href="clearanceshop.html">CLEARANCE</a>
+                 <div class="navmenusub">
+                    <div class="menusubsub">
+                       <a class="submenuheading" href="">ALL clearance</a>                     
+                       <a href="">Women</a>
+                       <a href="">Men</a>
+                       <a href="">Girls</a>
+                       <a href="">Boys</a>
+                       <a href="">Shoes</a>
+                       <a href="">Accessories</a>
+                    </div>
+                 </div>
+              </li>
+           </div>
+           </ul>
+        </nav>
+    </header>
+
+</body>
+
+</html>
+
+<!--
+    RESPONSIVE PAGE LAYOUT using media query...
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.wrapper {overflow: auto;}
+
+#main {margin-left: 4px;}
+
+#leftsidebar {
+  float: none;
+  width: auto;
+}
+
+#menulist {
+  margin: 0;
+  padding: 0;
+}
+
+.menuitem {
+  background: #CDF0F6;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  list-style-type: none;
+  margin: 4px;
+  padding: 2px;
+}
+
+@media screen and (min-width: 480px) {
+  #leftsidebar {width: 200px; float: left;}
+  #main {margin-left: 216px;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div id="leftsidebar">
+    <ul id="menulist">
+      <li class="menuitem">Menu-item 1</li>
+      <li class="menuitem">Menu-item 2</li>
+      <li class="menuitem">Menu-item 3</li>
+      <li class="menuitem">Menu-item 4</li>
+      <li class="menuitem">Menu-item 5</li>
+    </ul>
+  </div>
+  
+  <div id="main">
+    <h1>Resize the browser window to see the effect!</h1>
+    <p>This example shows a menu that will float to the left of the page if the viewport is 480 pixels wide or wider. If the viewport is less than 480 pixels, the menu will be on top of the content.</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+ /* Add a black background color to the top navigation */
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: rgb(255, 0, 0);
+        }
+
+        /* Add an active class to highlight the current page */
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Hide the link that should open and close the topnav on small screens */
+        .topnav .icon {
+            display: none;
+        }
+
+            <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+       /*Add media queries:*/
+
+        /*Example*/
+        /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home").
+        Show the link that contains should open and close the topnav (.icon) */
+        /*@media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            
+            }
+        }*/
+
+        /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+        This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+        /*@media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }*/
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+              <script>
+        // Step 3) Add JavaScript:
+        //Example
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+
+-->

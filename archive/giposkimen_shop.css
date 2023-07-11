@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid gray;
+}
+header{
+    background-color: rgb(65, 65, 65);
+    position: fixed;
+    width: 100%;
+    height: 17%;
+    top: 0em;
+    left: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0em 1em;
+}
+header #glogo:hover{
+    color: transparent;
+    background-color: rgb(65, 65, 65);
+    border: none;  
+}
+header #giposkilogo{
+    margin: 0.5em;
+    width: 12%;
+}
+form{
+    color: snow;
+    position: relative;
+    top: -2em;
+    left: 54em;
+    display: inline-block;
+    margin-bottom: -2em;
+}
+form input#searchbox{
+    padding: 0.5em 1em;
+}
+form input#searchbutton{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: lightgrey;
+    border: 0.1em solid gray;
+    padding: 0.5em 2em;
+}
+form input#searchbutton:hover{
+    color: rgb(255, 160, 160);
+    background-color: rgb(65, 65, 65);
+    border: 0.1em dashed snow;
+}
+header menu{
+    margin: 0.5em;
+}
+header menu ul li{
+    display: inline;
+    list-style: none;
+}
+header menu a{
+    margin: 0.1em;
+    color: snow;
+    padding: 0.5% 2.5%;
+    border: 0.1em solid gray;
+}
+header a:hover{
+    background-color: rgb(211, 211, 211, 0.5);
+    color: rgb(255, 160, 160);
+    border: 0.1em dashed snow;  
+}

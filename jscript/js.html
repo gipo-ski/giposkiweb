@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .lotto {
+                display: inline-block;
+                font-family: monospace;
+                font-size: 1.5em;
+                color: darkgreen;
+                margin-right: 1em;
+                padding: 0.5em 2.5em;
+            }
+        </style>
+    </head>
+
+<body>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>The best way to loop through an array is using a standard for loop:</p>
+
+    <p id="demon"></p>
+    <h2 id="demo1"></h2>
+
+    <script>
+        document.getElementById("demon").innerHTML =
+            '"john" :' + typeof "john" + "<br>" +
+            '3.14 :' + typeof 3.14 + "<br>" +
+            'NaN :' + typeof NaN + "<br>" +
+            'false :' + typeof false + "<br>" +
+            '[1,2,3,4] :' + typeof [1, 2, 3, 4] + "<br>" +
+            "{name:'john', age:34} :" + typeof { name: 'john', age: 34 } + "<br>" +
+            'new Date() :' + typeof new Date() + "<br>" +
+            'function () {} :' + typeof function () { } + "<br>" +
+            'myCar :' + typeof myCar + "<br>" +
+            'null :' + typeof null;
+    </script>
+
+    <script>
+        var fruits, text, fLen, i;
+        fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fLen = fruits.length;
+
+        text = "<ul>";
+        for (i = 0; i < fLen; i++) {
+            text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+
+        document.getElementById("demo").innerHTML = text;
+
+        var fruits, text;
+        fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        text = "<ul>";
+        fruits.forEach(myFunction);
+        text += "</ul>";
+        document.getElementById("demo1").innerHTML = text;
+
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        } 
+    </script>
+    <h2>JavaScript Array Sort</h2>
+
+    <p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+
+    <p id="demo2"></p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo2").innerHTML = points;
+
+        function myFunction1() {
+            points.sort();
+            document.getElementById("demo2").innerHTML = points;
+        }
+        function myFunction2() {
+            points.sort(function (a, b) { return a - b });
+            document.getElementById("demo2").innerHTML = points;
+        }
+    </script>
+    <h2>JavaScript Array Sort</h2>
+
+    <h3>The Fisher Yates Method</h3>
+
+    <p>Click the button (again and again) to sort the array in random order.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo3"></p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo3").innerHTML = points;
+
+        function myFunction() {
+            var i, j, k;
+            for (i = points.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * i)
+                k = points[i]
+                points[i] = points[j]
+                points[j] = k
+            }
+            document.getElementById("demo3").innerHTML = points;
+        }
+    </script>
+
+
+    <h2>JavaScript Array Sort</h2>
+
+    <p>The highest number is <span id="demomax"></span>.</p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demomax").innerHTML = myArrayMax(points);
+
+        function myArrayMax(arr) {
+            var len = arr.length;
+            var max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                    max = arr[len];
+                }
+            }
+            return max;
+        }
+
+    </script>
+
+    <h2>JavaScript Array Sort</h2>
+
+    <p>The lowest number is <span id="demomin"></span>.</p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demomin").innerHTML = myArrayMin(points);
+
+        function myArrayMin(arr) {
+            var len = arr.length;
+            var min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                    min = arr[len];
+                }
+            }
+            return min;
+        }
+    </script>
+    <h2>JavaScript Array Sort</h2>
+
+    <p>Click the buttons to sort car objects on type.</p>
+
+    <button onclick="myFunction1()">Sort</button>
+
+    <p id="democar"></p>
+
+    <script>
+        var cars = [
+            { type: "Volvo", year: 2016 },
+            { type: "Saab", year: 2001 },
+            { type: "BMW", year: 2010 }
+        ];
+
+        displayCarsType();
+
+        function myFunction1() {
+            cars.sort(function (a, b) {
+                var x = a.type.toLowerCase();
+                var y = b.type.toLowerCase();
+                if (x < y) { return -1; }
+                if (x > y) { return 1; }
+                return 0;
+            });
+            displayCarsType();
+        }
+
+        function displayCarsType() {
+            document.getElementById("democar").innerHTML =
+                cars[0].type + " " + cars[0].year + "<br>" +
+                cars[1].type + " " + cars[1].year + "<br>" +
+                cars[2].type + " " + cars[2].year;
+        }
+    </script>
+
+    <h2>JavaScript Array Sort</h2>
+
+    <p>Click the buttons to sort car objects on age.</p>
+
+    <button onclick="myFunction2()">Sort</button>
+
+    <p id="democaryear"></p>
+
+    <script>
+        var cars = [
+            { type: "Volvo", year: 2016 },
+            { type: "Saab", year: 2001 },
+            { type: "BMW", year: 2010 }
+        ];
+
+        displayCars();
+
+        function myFunction2() {
+            cars.sort(function (a, b) { return a.year - b.year });
+            displayCars();
+        }
+
+        function displayCars() {
+            document.getElementById("democaryear").innerHTML =
+                cars[0].type + " " + cars[0].year + "<br>" +
+                cars[1].type + " " + cars[1].year + "<br>" +
+                cars[2].type + " " + cars[2].year;
+        }
+    </script>
+
+    <h2>JavaScript Math.random()</h2>
+
+    <p>Every time you click the button, getRndInteger(min, max) returns a random number between 0
+        and 9 (both included):</p>
+
+    <button onclick="document.getElementById('demorand1').innerHTML = getRndInteger(0,10)">lotto 1</button>
+    <button onclick="document.getElementById('demorand2').innerHTML = getRndInteger(0,10)">lotto 2</button>
+    <button onclick="document.getElementById('demorand3').innerHTML = getRndInteger(0,10)">lotto 3</button><br>
+
+    <p class="lotto" id="demorand1"></p>
+    <p class="lotto" id="demorand2"></p>
+    <p class="lotto" id="demorand3"></p>
+
+    <script>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+</body>
+
+</html>
